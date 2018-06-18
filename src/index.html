@@ -1,102 +1,229 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="utf-8">
     <title>Weekly WebDev Challenge #1</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <style>
-      .loader-screen {
-        position: fixed;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        position: fixed;
-        background: linear-gradient(135deg, #e7422f 0%,#f9cb77 100%);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
+        .loader-screen {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: linear-gradient(135deg, #e7422f 0%, #f9cb77 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-      .loader-screen__image {
-        animation: pulse alternate 0.5s infinite ease-in;
-        opacity: 0.5;
-      }
+        .loader-screen__image {
+            animation: pulse alternate 0.5s infinite ease-in;
+            opacity: 0.5;
+        }
 
-      @keyframes pulse {
-        0%   { transform: scale(1) }
-        100%  { transform: scale(1.1) }
-      }
+        @keyframes pulse {
+            0% {
+                transform: scale(1)
+            }
+            100% {
+                transform: scale(1.1)
+            }
+        }
 
     </style>
     <!-- build:css -->
     <link rel="stylesheet" href="css/style.css">
     <!-- endbuild -->
 
-  </head>
-  <body>
-    <div class="loader-screen" id="loader">
-      <img src="img/logo-loading.webp" class="loader-screen__image" alt="loading logo">
-    </div>
-
-    <div class="container">
-    <div class="col">
-    <section class="form__area">
-
-      <h2 class="form__title">Register Form</h2>
-      <div class="form__wrapper">
-        <form action="" method="post" class="form" autocomplete="off">
-
-          <div class="form__group">
-            <span class="form__icon">
-              <img src="img/businessman.svg" alt="">
-            </span>
-            <input class="form__input form__input--error" type="text" name="username" placeholder="Username" required>
-            <span class="form__error">You must fill this field</span>
-          </div>
-
-          <div class="form__group">
-              <span class="form__icon">
-                <img src="img/email.svg" alt="">
-              </span>
-            <input class="form__input" type="text" name="email" placeholder="Email">
-          </div>
-
-          <div class="form__group">
-              <span class="form__icon">
-                <img src="img/location.svg" alt="">
-              </span>
-            <input class="form__input form__input--select" id="city-value" type="text" name="location" placeholder="Your location">
-            <ul class="form__dropdown">
-              <li class="form__dropdown-item city-item">Lublin</li>
-              <li class="form__dropdown-item city-item">Warsaw</li>
-            </ul>
-          </div>
-
-          <div class="form__group">
-            <label class="form__label" for="terms">
-                <span class="form__label-text">I have read and accept the terms of use.</spac>
-                <input class="form__checkbox" type="checkbox" id="terms">
-                <span class="form__checkmark"></span>
-               
-            </label>
-          </div>
-
-          <button class="form__button">Sign up</button>
-        </form>
-      </div>
-
-    </section>
-
-  </div>
+</head>
+<body>
+<div class="loader-screen" id="loader">
+    <img src="img/logo-loading.webp" class="loader-screen__image" alt="loading logo">
 </div>
-    <script
-    src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
-    crossorigin="anonymous"></script>
-    <!-- build:js -->
-    <script src="js/script.js"></script>
-    <!-- endbuild  -->
-  </body>
+
+<div class="container">
+    <div class="col">
+        <section class="form__area">
+
+            <h2 class="form__title">Register Form</h2>
+            <div class="form__wrapper">
+                <form action="" method="post" class="form" autocomplete="off">
+
+                    <div class="form__group">
+                        <span class="form__icon">
+                            <img src="img/businessman.svg" alt="">
+                        </span>
+                        <input class="form__input form__input--error" type="text" name="username" placeholder="Username"
+                               required>
+                        <span class="form__error">You must fill this field</span>
+                    </div>
+
+                    <div class="form__group">
+                        <span class="form__icon">
+                            <img src="img/locked.svg" alt="">
+                        </span>
+                        <input class="form__input" type="password" name="password" placeholder="Confirm password">
+                    </div>
+
+                    <div class="form__group">
+                        <span class="form__icon">
+                            <img src="img/locked.svg" alt="">
+                        </span>
+                        <input class="form__input" type="password" name="password" placeholder="Password">
+                    </div>
+
+                    <div class="form__group">
+                        <span class="form__icon">
+                            <img src="img/email.svg" alt="">
+                        </span>
+                        <input class="form__input" type="text" name="email" placeholder="Email">
+                    </div>
+
+
+                    <div class="form__group">
+                        <span class="form__icon">
+                            <img src="img/location.svg" alt="">
+                        </span>
+                        <input class="form__input form__input--select" id="city-value" type="text" name="location"
+                               placeholder="Your location">
+                        <ul class="form__dropdown" id="cities"></ul>
+                    </div>
+
+                    <div class="form__group">
+                        <label class="form__label" for="terms">
+                            <span class="form__label-text">I have read and accept the terms of use.</span>
+                            <input class="form__checkbox" type="checkbox" id="terms">
+                            <span class="form__checkmark"></span>
+
+                        </label>
+                    </div>
+
+                    <button class="form__button" disabled>Sign up</button>
+                </form>
+            </div>
+
+        </section>
+
+        <section class="form__area">
+
+            <h2 class="form__title">Send email</h2>
+            <div class="form__wrapper">
+                <form action="" method="post" class="form" autocomplete="off">
+
+                    <div class="form__group">
+                        <span class="form__icon">
+                            <img src="img/businessman.svg" alt="">
+                        </span>
+                        <input class="form__input" type="text" name="username" placeholder="Username">
+                    </div>
+
+                    <div class="form__group">
+                        <span class="form__icon">
+                            <img src="img/email.svg" alt="">
+                        </span>
+                        <input class="form__input" type="text" name="email" placeholder="Your email">
+                    </div>
+
+                    <div class="form__group">
+                        <textarea class="form__textarea" placeholder="Type your message here"></textarea>
+                    </div>
+
+                    <div class="form__group">
+                        <label class="form__label" for="copy-mail">
+                            <span class="form__label-text">Send a copy to my Email</span>
+                            <input class="form__checkbox" type="checkbox" id="copy-mail">
+                            <span class="form__checkmark"></span>
+
+                        </label>
+                    </div>
+
+                    <button class="form__button">Send email</button>
+                </form>
+            </div>
+
+        </section>
+
+
+    </div>
+    <div class="col">
+        <section class="form__area">
+
+            <h2 class="form__title">Sign in form</h2>
+            <div class="form__wrapper">
+                <form action="" method="post" class="form" autocomplete="off">
+
+                    <div class="form__group">
+                        <span class="form__icon">
+                            <img src="img/businessman.svg" alt="">
+                        </span>
+                        <input class="form__input" type="text" name="username" placeholder="Username">
+                    </div>
+
+                    <div class="form__group">
+                        <span class="form__icon">
+                            <img src="img/locked.svg" alt="">
+                        </span>
+                        <input class="form__input" type="password" name="password" placeholder="Password">
+                    </div>
+
+                    <div class="form__footer">
+
+                    <div class="form__group">
+                        <label class="form__label" for="remember-me">
+                            <span class="form__label-text">Remember me.</span>
+                            <input class="form__checkbox" type="checkbox" id="remember-me">
+                            <span class="form__checkmark"></span>
+                        </label>
+                    </div>
+
+                    <button class="form__button">Sign in</button>
+                    </div>
+                </form>
+            </div>
+
+        </section>
+
+        <section class="form__area">
+
+            <h2 class="form__title">Sign in form</h2>
+            <div class="form__wrapper">
+                <form action="" method="post" class="form" autocomplete="off">
+
+                    <div class="form__group">
+                        <span class="form__icon">
+                            <img src="img/email.svg" alt="">
+                        </span>
+                        <input class="form__input" type="text" name="email" placeholder="Enter Your Email">
+                    </div>
+
+                    <div class="form__group">
+                        <span class="form__icon">
+                            <img src="img/phone.svg" alt="">
+                        </span>
+                        <input class="form__input" type="text" name="password" placeholder="Enter your Phone number">
+                    </div>
+
+                    <div class="form__footer form__footer--buttons">
+                        <button class="form__button">Send</button>
+                        <button class="form__button" disabled>Done</button>
+                    </div>
+                </form>
+            </div>
+
+        </section>
+
+    </div>
+</div>
+
+
+<script
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+        crossorigin="anonymous"></script>
+<!-- build:js -->
+<script src="js/script.js"></script>
+<!-- endbuild  -->
+</body>
 </html>
