@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Titillium+Web:300,400,600');
 
 $desktop: 768px;
+$lg-desktop: 1060px;
 * {
   margin: 0;
   padding: 0;
@@ -44,7 +45,7 @@ body {
 
 
 .container {
-  width: 1050px;
+  width: 1000px;
   max-width: 100%;
   display: flex;
   flex-direction: column;
@@ -60,6 +61,9 @@ body {
     align-items: center;
     @media screen and (min-width: $desktop) {
       width: 100%;
+      padding: 0 10px;
+    }
+    @media screen and (min-width: $lg-desktop) {
       padding: 0 40px;
     }
   }
@@ -79,18 +83,19 @@ body {
     text-shadow: 1px 2px 2px rgba(43, 1, 0, 0.75);
     margin-bottom: 15px;
     text-align: center;
+    text-transform: capitalize;
   }
 
   &__area {
     margin: 10px 0 35px;
-    max-width: 505px;
+    max-width: 550px;
     width: 100%;
     opacity: 1;
     transition: opacity 0.2s ease-in;
   }
 
   &__wrapper {
-    border: 18px solid rgba(0, 0, 0, 0.23);
+    border: 20px solid rgba(0, 0, 0, 0.23);
     border-radius: 5px;
     transition: border 0.2s ease-in-out;
     &:hover {
@@ -123,8 +128,6 @@ body {
 
     img {
       max-height: 26px;
-      transform: scale(0.95);
-      transition: transform 0.2s ease-in;
     }
   }
 
@@ -149,6 +152,10 @@ body {
   &__label-text {
     padding-left: 40px;
     display: block;
+
+    a {
+      color: #51850e;
+    }
   }
 
   &__checkbox {
@@ -197,8 +204,13 @@ body {
     padding-left: 80px;
     padding-right: 5px;
 
+    &--with-icon {
+      padding-right: 40px;
+    }
+
     &--error {
       border-color: #e7422f;
+      color: #e7422f;
     }
 
     &:focus,
@@ -224,7 +236,8 @@ body {
     }
 
     &::placeholder {
-      color: $input-text-color
+      color: $input-text-color;
+      opacity: 0.5;
     }
   }
 
@@ -246,7 +259,8 @@ body {
 
     &::placeholder {
       font-family: 'Titillium Web', sans-serif;
-      color: $input-text-color
+      color: $input-text-color;
+      opacity: 0.5;
     }
   }
 
@@ -355,5 +369,25 @@ body {
 
   40%, 60% {
     transform: translate3d(4px, 0, 0);
+  }
+}
+
+.toggle-password {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  &:focus {
+    outline: none;
+  }
+  &__image {
+    max-width: 24px;
   }
 }

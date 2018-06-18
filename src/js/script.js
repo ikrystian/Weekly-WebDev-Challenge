@@ -1,6 +1,9 @@
+const body = document.querySelector('body');
+
 document.addEventListener('DOMContentLoaded', () => {
     setTimeout(function() {
         document.getElementById('loader').remove();
+        body.classList.remove('loading');
     }, 1);
 }, false);
 
@@ -27,9 +30,24 @@ document.querySelectorAll('.city-item').forEach(e => {
 
 document.querySelectorAll('.form__wrapper').forEach(e => {
     e.addEventListener('mouseover', () => {
-        document.querySelector('body').classList.add('form-area-hover');
+        body.classList.add('form-area-hover');
     });
     e.addEventListener('mouseleave', () => {
-        document.querySelector('body').classList.remove('form-area-hover');
+        body.classList.remove('form-area-hover');
     })
 });
+
+let showPassword = false;
+function togglePassword() {
+
+    showPassword = !showPassword;
+    let password = document.getElementById('password');
+    let togglePassword =document.getElementById('toggle-password');
+    if(showPassword === true) {
+        password.setAttribute('type', 'text');
+        togglePassword.setAttribute('src', 'img/hide.svg');
+    } else {
+        password.setAttribute('type', 'password');
+        togglePassword.setAttribute('src', 'img/view.svg');
+    }
+}
