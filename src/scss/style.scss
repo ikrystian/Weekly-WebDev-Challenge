@@ -12,6 +12,9 @@ body {
   background: url('../img/bg.jpg') center no-repeat fixed;
   background-size: cover;
   font-family: 'Titillium Web', sans-serif;
+  &.form-area-hover .form__area:not(:hover) {
+    opacity: 0.2 !important;
+  }
 }
 
 .header,
@@ -82,6 +85,8 @@ body {
     margin: 10px 0 35px;
     max-width: 505px;
     width: 100%;
+    opacity: 1;
+    transition: opacity 0.2s ease-in;
   }
 
   &__wrapper {
@@ -233,6 +238,11 @@ body {
     font-family: 'Titillium Web', sans-serif;
     font-size: 16px;
     min-height: 180px;
+
+    &:focus {
+      border-color: #33225b;
+      outline: none;
+    }
 
     &::placeholder {
       font-family: 'Titillium Web', sans-serif;

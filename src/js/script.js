@@ -25,4 +25,11 @@ document.querySelectorAll('.city-item').forEach(e => {
     })
 });
 
-//
+document.querySelectorAll('.form__wrapper').forEach(e => {
+    e.addEventListener('mouseover', () => {
+        document.querySelector('body').classList.add('form-area-hover');
+    });
+    e.addEventListener('mouseleave', () => {
+        document.querySelector('body').classList.remove('form-area-hover');
+    })
+});
