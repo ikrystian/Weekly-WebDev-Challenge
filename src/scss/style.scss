@@ -1,5 +1,163 @@
-@import "settings";
+@import 'settings';
+
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web:300,400,600');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
 
 body {
-    background-color: $color-bg;
+    background: url('../img/bg.jpg') center no-repeat fixed;
+    background-size: cover;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+.form {
+    
+    border-radius: 5px;
+    background-color: $form-bg;
+    padding: 20px; 
+
+    &__title {
+        font-size: 32px;
+        color: #ffffff;
+        font-weight: 500;
+        text-shadow: 1px 2px 2px rgba(43, 1, 0, 0.75);
+        margin-bottom: 15px;
+        text-align: center;
+    }
+
+    &__area {
+        margin: 10px;
+    }
+
+    &__wrapper {
+        border: 18px solid rgba(0, 0, 0, 0.23);
+        border-radius: 5px;
+        transition: border 0.2s ease-in-out;
+        &:hover {
+            border-color:  rgba(0, 0, 0, 0.43);
+        }
+    }
+
+    &__group {
+        margin-bottom: 20px;
+        position: relative;
+    }
+
+    &__icon {
+        position: absolute;
+        width: 60px;
+        height: 30px;
+        border-right: 1px solid #dedede;
+        top: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+            max-height: 26px;
+        }
+    }
+
+    &__error {
+        font-size: 12px;
+        margin-bottom: -10px;
+        display: block;
+        color: #e7422f;
+    }
+
+    &__label {
+        font-size: 17px;
+        color: #afafaf;
+        font-weight: 300;
+        cursor: pointer;
+        padding-left: 40px;
+        transition: color 0.2s ease-in;
+        &:hover {
+            color: #6d6d6d;
+        }
+    }
+
+    &__checkbox {
+        opacity: 0;
+        width: 0;
+        height: 0;
+        &:checked ~ .form__checkmark:after {
+            background: linear-gradient(to bottom, #a1d73d 1%,#7ec31f 100%);
+
+        }
+    }
+
+    &__checkmark {
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        border: 1px solid #d4d4d4;
+        border-radius: 4px;
+        left: 0;
+        &:after {
+            content: '';
+            height: 12px;
+            width: 12px;
+            background-color: #dedede;
+            display: block;
+            position: absolute;
+            left: 5px;
+            top: 5px;
+            border-radius: 3px;
+        }
+    }
+
+
+    &__input {
+        border: 1px solid $input-border-color;
+        display: block;
+        width: 100%;
+        height: 40px;
+        border-radius: 4px;
+        font-size: 16px;
+        font-weight: 300;
+        color: $input-text-color;
+        padding-left: 80px;
+        padding-right: 5px;
+        transition: border-color 0.2s ease-in-out;
+        
+        &--error {
+            border-color: #e7422f;
+        }
+        
+        &:focus {
+            border-color: #33225b;
+            outline: none;
+        }
+
+        &::placeholder {
+            color: $input-text-color
+        }
+    }
+
+    &__button {
+        border-radius: 4px;
+        border: 1px solid #3b9a00;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        font-size: 24px;
+        text-shadow: 1px 1px 0 #51850e;
+        color: #ffffff;
+        font-weight: 500;
+        background: linear-gradient(to bottom, #a1d73d 1%,#7ec31f 100%);
+        cursor: pointer;
+
+        &:hover {
+            background: #a1d73d;
+        }
+    }
 }

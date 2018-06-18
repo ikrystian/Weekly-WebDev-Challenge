@@ -2,15 +2,89 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Gulp Starter Kit</title>
+    <title>Weekly WebDev Challenge #1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+      .loader-screen {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        position: fixed;
+        background: linear-gradient(135deg, #e7422f 0%,#f9cb77 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .loader-screen__image {
+        animation: pulse alternate 0.5s infinite ease-in;
+        opacity: 0.5;
+      }
+
+
+      @keyframes pulse {
+        0%   { transform: scale(1) }
+        100%  { transform: scale(1.1) }
+      }
+
+    </style>
     <!-- build:css -->
     <link rel="stylesheet" href="css/style.css">
     <!-- endbuild -->
+
   </head>
   <body>
-    <h1>Gulp starter kit</h1>
+    <div class="loader-screen" id="loader">
+      <img src="img/logo-loading.webp" class="loader-screen__image" alt="loading logo">
+    </div>
+
+    <section class="form__area">
+
+      <h2 class="form__title">Register Form</h2>
+      <div class="form__wrapper">
+        <form action="" method="post" class="form" autocomplete="off">
+
+          <div class="form__group">
+            <span class="form__icon">
+              <img src="img/businessman.svg" alt="">
+            </span>
+            <input class="form__input form__input--error" type="text" name="username" placeholder="Username" required>
+            <span class="form__error">You must fill this field</span>
+          </div>
+
+          <div class="form__group">
+              <span class="form__icon">
+                <img src="img/email.svg" alt="">
+              </span>
+            <input class="form__input" type="text" name="email" placeholder="Email">
+          </div>
+
+          <div class="form__group">
+              <span class="form__icon">
+                <img src="img/location.svg" alt="">
+              </span>
+            <input class="form__input" type="text" name="location" placeholder="Your location">
+          </div>
+
+          <div class="form__group">
+            <label class="form__label" for="terms">
+                I have read and accept the terms of use.
+                <input class="form__checkbox" type="checkbox" id="terms">
+                <span class="form__checkmark"></span>
+               
+            </label>
+          </div>
+
+          <button class="form__button">Sign up</button>
+        </form>
+      </div>
+
+    </section>
+
     <!-- build:js -->
-    <script src="js/plugins.js"></script>
     <script src="js/script.js"></script>
     <!-- endbuild  -->
   </body>
