@@ -40,6 +40,8 @@
       <img src="img/logo-loading.webp" class="loader-screen__image" alt="loading logo">
     </div>
 
+    <div class="container">
+    <div class="col">
     <section class="form__area">
 
       <h2 class="form__title">Register Form</h2>
@@ -65,12 +67,16 @@
               <span class="form__icon">
                 <img src="img/location.svg" alt="">
               </span>
-            <input class="form__input" type="text" name="location" placeholder="Your location">
+            <input class="form__input form__input--select" id="city-value" type="text" name="location" placeholder="Your location">
+            <ul class="form__dropdown">
+              <li class="form__dropdown-item city-item">Lublin</li>
+              <li class="form__dropdown-item city-item">Warsaw</li>
+            </ul>
           </div>
 
           <div class="form__group">
             <label class="form__label" for="terms">
-                I have read and accept the terms of use.
+                <span class="form__label-text">I have read and accept the terms of use.</spac>
                 <input class="form__checkbox" type="checkbox" id="terms">
                 <span class="form__checkmark"></span>
                
@@ -83,6 +89,12 @@
 
     </section>
 
+  </div>
+</div>
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+    crossorigin="anonymous"></script>
     <!-- build:js -->
     <script src="js/script.js"></script>
     <!-- endbuild  -->
