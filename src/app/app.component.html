@@ -1,0 +1,189 @@
+<header class="header">
+  <a href="#" title="Go to home page" class="header__link">
+    <img src="/assets/images/logo.png" class="header__image" alt="header logo image">
+  </a>
+</header>
+
+<div class="container">
+  <div class="col">
+
+    <section class="form__area">
+
+      <h2 class="form__title">Register form</h2>
+      <div class="form__wrapper">
+        <form action="" method="post" class="form" autocomplete="off">
+
+          <div class="form__group">
+                        <span class="form__icon">
+                            <img src="/assets/images/businessman.svg" alt="">
+                        </span>
+            <input class="form__input form__input--error" type="text" name="username" placeholder="Username" value="John"
+                   required>
+            <span class="form__error">This username is taken</span>
+          </div>
+
+          <div class="form__group">
+                        <span class="form__icon">
+                            <img src="/assets/images/locked.svg" alt="">
+                        </span>
+            <input class="form__input form__input--with-icon" id="password" value="sample-password" type="password" name="password" placeholder="Password">
+            <button type="button" class="toggle-password" title="show or hide password">
+              <img src="/assets/images/view.svg" id="toggle-password" class="toggle-password__image" alt="">
+            </button>
+          </div>
+
+          <div class="form__group">
+                        <span class="form__icon">
+                            <img src="/assets/images/locked.svg" alt="">
+                        </span>
+            <input class="form__input" type="password" name="password" placeholder="Confirm password">
+          </div>
+
+          <div class="form__group">
+                        <span class="form__icon">
+                            <img src="/assets/images/email.svg" alt="">
+                        </span>
+            <input class="form__input" type="email" name="email" placeholder="Email">
+          </div>
+
+
+          <div class="form__group">
+                        <span class="form__icon">
+                            <img src="/assets/images/location.svg" alt="">
+                        </span>
+            <input class="form__input form__input--select" id="city-value" type="text" name="location"
+                   placeholder="Your location">
+            <ul class="form__dropdown" id="cities"></ul>
+          </div>
+
+          <div class="form__group">
+            <label class="form__label" for="terms">
+              <span class="form__label-text">I have read and accept the <a href="#">terms of use</a>.</span>
+              <input class="form__checkbox" type="checkbox" id="terms">
+              <span class="form__checkmark"></span>
+
+            </label>
+          </div>
+
+          <button class="form__button" disabled>Sign up</button>
+        </form>
+      </div>
+
+    </section>
+
+    <section class="form__area">
+
+      <h2 class="form__title">Send email</h2>
+      <div class="form__wrapper">
+        <form action="" method="post" class="form" autocomplete="off">
+
+          <div class="form__group">
+                        <span class="form__icon">
+                            <img src="/assets/images/businessman.svg" alt="">
+                        </span>
+            <input class="form__input" type="text" name="username" placeholder="Username">
+          </div>
+
+          <div class="form__group">
+                        <span class="form__icon">
+                            <img src="/assets/images/email.svg" alt="">
+                        </span>
+            <input class="form__input" type="text" name="email" placeholder="Your email">
+          </div>
+
+          <div class="form__group">
+            <textarea class="form__textarea" placeholder="Type your message here"></textarea>
+          </div>
+
+          <div class="form__group">
+            <label class="form__label" for="copy-mail">
+              <span class="form__label-text">Send a copy to my Email</span>
+              <input class="form__checkbox" type="checkbox" id="copy-mail">
+              <span class="form__checkmark"></span>
+
+            </label>
+          </div>
+
+          <button class="form__button">Send email</button>
+        </form>
+      </div>
+
+    </section>
+
+
+  </div>
+  <div class="col">
+    <section class="form__area">
+
+      <h2 class="form__title">Sign in form</h2>
+      <div class="form__wrapper">
+        <form action="" method="post" class="form" autocomplete="off">
+
+          <div class="form__group">
+                        <span class="form__icon">
+                            <img src="/assets/images/businessman.svg" alt="">
+                        </span>
+            <input class="form__input" type="text" name="username" placeholder="Username">
+          </div>
+
+          <div class="form__group">
+                        <span class="form__icon">
+                            <img src="/assets/images/locked.svg" alt="">
+                        </span>
+            <input class="form__input" type="password" name="password" placeholder="Password">
+          </div>
+
+          <div class="form__footer">
+
+            <div class="form__group">
+              <label class="form__label" for="remember-me">
+                <span class="form__label-text">Remember me.</span>
+                <input class="form__checkbox" type="checkbox" id="remember-me">
+                <span class="form__checkmark"></span>
+              </label>
+            </div>
+
+            <button class="form__button">Sign in</button>
+          </div>
+        </form>
+      </div>
+
+    </section>
+
+    <section class="form__area">
+
+      <h2 class="form__title">Sign in form</h2>
+      <div class="form__wrapper">
+        <form action="" method="post" class="form" autocomplete="off">
+
+          <div class="form__group">
+                        <span class="form__icon">
+                            <img src="/assets/images/email.svg" alt="">
+                        </span>
+            <input class="form__input" type="text" name="email" placeholder="Enter Your Email">
+          </div>
+
+          <div class="form__group">
+                        <span class="form__icon">
+                            <img src="/assets/images/phone.svg" alt="">
+                        </span>
+            <input class="form__input" type="text" name="password" placeholder="Enter your Phone number">
+          </div>
+
+          <div class="form__footer form__footer--buttons">
+            <button class="form__button">Send</button>
+            <button class="form__button" disabled>Done</button>
+          </div>
+        </form>
+      </div>
+
+    </section>
+
+    <footer class="footer">
+      <a href="#" title="Go to home page" class="footer__link">
+        <img src="/assets/images/logo.png" class="footer__image" alt="footer logo image">
+      </a>
+    </footer>
+
+  </div>
+</div>

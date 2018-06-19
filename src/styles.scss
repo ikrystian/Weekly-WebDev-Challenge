@@ -1,4 +1,6 @@
-@import 'settings';
+$form-bg: #f4f4f4;
+$input-border-color: #c6c6c6;
+$input-text-color: #afafaf;
 @import url('https://fonts.googleapis.com/css?family=Titillium+Web:300,400,600');
 
 $desktop: 768px;
@@ -10,12 +12,12 @@ $lg-desktop: 1060px;
 }
 
 body {
-  background: url('../img/bg.jpg') center no-repeat fixed;
+  background: url('/assets/images/bg.jpg') center no-repeat fixed;
   background-size: cover;
   font-family: 'Titillium Web', sans-serif;
   &.form-area-hover .form__area:not(:hover) {
     opacity: 0.2 !important;
-  }
+}
 }
 
 .header,
@@ -25,8 +27,8 @@ body {
   justify-content: center;
   padding: 15px;
   @media screen and (min-width: $desktop) {
-    padding-top: 50px;
-  }
+  padding-top: 50px;
+}
   &__image {
     opacity: 0.3;
     max-width: 100%;
@@ -38,8 +40,8 @@ body {
       transform: translate3d(0, 0, 0);
       backface-visibility: hidden;
       perspective: 1000px;
-    }
   }
+}
 }
 
 
@@ -52,21 +54,21 @@ body {
   margin-left: auto;
   margin-right: auto;
   @media screen and (min-width: $desktop) {
-    flex-direction: row;
-  }
+  flex-direction: row;
+}
   .col {
     padding: 0 5px;
     display: flex;
     flex-direction: column;
     align-items: center;
     @media screen and (min-width: $desktop) {
-      width: 100%;
-      padding: 0 10px;
-    }
-    @media screen and (min-width: $lg-desktop) {
-      padding: 0 40px;
-    }
+    width: 100%;
+    padding: 0 10px;
   }
+    @media screen and (min-width: $lg-desktop) {
+    padding: 0 40px;
+  }
+}
 }
 
 
@@ -84,7 +86,7 @@ body {
     margin-bottom: 15px;
     text-align: center;
     text-transform: capitalize;
-  }
+}
 
   &__area {
     margin: 10px 0 35px;
@@ -92,7 +94,7 @@ body {
     width: 100%;
     opacity: 1;
     transition: opacity 0.2s ease-in;
-  }
+}
 
   &__wrapper {
     border: 20px solid rgba(0, 0, 0, 0.23);
@@ -100,8 +102,8 @@ body {
     transition: border 0.2s ease-in-out;
     &:hover {
       border-color: rgba(0, 0, 0, 0.43);
-    }
   }
+}
 
   &__group {
     margin-bottom: 20px;
@@ -109,12 +111,12 @@ body {
 
     &:hover img {
       transform: scale(1);
-    }
+  }
 
     &:last-of-type {
       margin-bottom: 10px;
-    }
   }
+}
 
   &__icon {
     position: absolute;
@@ -128,15 +130,15 @@ body {
 
     img {
       max-height: 26px;
-    }
   }
+}
 
   &__error {
     font-size: 12px;
     margin-bottom: -10px;
     display: block;
     color: #e7422f;
-  }
+}
 
   &__label {
     font-size: 17px;
@@ -146,8 +148,8 @@ body {
     transition: color 0.2s ease-in;
     &:hover {
       color: #6d6d6d;
-    }
   }
+}
 
   &__label-text {
     padding-left: 40px;
@@ -155,8 +157,8 @@ body {
 
     a {
       color: #51850e;
-    }
   }
+}
 
   &__checkbox {
     opacity: 0;
@@ -165,8 +167,8 @@ body {
     position: absolute;
     &:checked ~ .form__checkmark:after {
       filter: grayscale(0);
-    }
   }
+}
 
   &__checkmark {
     position: absolute;
@@ -189,8 +191,8 @@ body {
       left: 5px;
       top: 5px;
       border-radius: 3px;
-    }
   }
+}
 
   &__input {
     border: 1px solid $input-border-color;
@@ -206,18 +208,18 @@ body {
 
     &--with-icon {
       padding-right: 40px;
-    }
+  }
 
     &--error {
       border-color: #e7422f;
       color: #e7422f;
-    }
+  }
 
     &:focus,
     &.open {
       border-color: #33225b;
       outline: none;
-    }
+  }
 
     &--select {
       background-color: #fff;
@@ -231,15 +233,15 @@ body {
         ~ .form__dropdown {
           display: block;
 
-        }
       }
     }
+  }
 
     &::placeholder {
       color: $input-text-color;
       opacity: 0.5;
-    }
   }
+}
 
   &__textarea {
     border: 1px solid $input-border-color;
@@ -255,14 +257,14 @@ body {
     &:focus {
       border-color: #33225b;
       outline: none;
-    }
+  }
 
     &::placeholder {
       font-family: 'Titillium Web', sans-serif;
       color: $input-text-color;
       opacity: 0.5;
-    }
   }
+}
 
   &__button {
     border-radius: 4px;
@@ -281,11 +283,11 @@ body {
     &:disabled {
       opacity: 0.5;
       cursor: not-allowed;
-    }
+  }
     &:not(:disabled):hover {
       background: #a1d73d;
-    }
   }
+}
 
   &__dropdown {
     list-style: none;
@@ -300,7 +302,7 @@ body {
     overflow: auto;
     max-height: 140px;
     border-top-color: #dedede;
-  }
+}
 
   &__dropdown-item {
     padding: 5px 16px;
@@ -309,7 +311,7 @@ body {
     position: relative;
     &:not(:first-child) {
       border-top: 1px solid #dedede;
-    }
+  }
     // todo change it to border
     &:after {
       content: '';
@@ -321,16 +323,16 @@ body {
       width: 0;
       background-color: #aee2f0;
       transition: width 0.2s ease-in;
-    }
+  }
     &:hover {
       padding-left: 24px;
       background-color: #ffe7bf;
 
       &:after {
         width: 10px;
-      }
     }
   }
+}
 
   &__footer {
     display: flex;
@@ -338,38 +340,38 @@ body {
 
     &--buttons {
       justify-content: space-between;
-    }
+  }
 
     .form__group {
       flex: 1;
       margin-bottom: 0;
-    }
+  }
     button {
       width: 140px;
       &:not(:last-child) {
         margin-right: 10px;
-      }
     }
   }
+}
 }
 
 // shake animation
 @keyframes shake {
-  10%, 90% {
-    transform: translate3d(-1px, 0, 0);
-  }
+10%, 90% {
+transform: translate3d(-1px, 0, 0);
+}
 
-  20%, 80% {
-    transform: translate3d(2px, 0, 0);
-  }
+20%, 80% {
+transform: translate3d(2px, 0, 0);
+}
 
-  30%, 50%, 70% {
-    transform: translate3d(-4px, 0, 0);
-  }
+30%, 50%, 70% {
+transform: translate3d(-4px, 0, 0);
+}
 
-  40%, 60% {
-    transform: translate3d(4px, 0, 0);
-  }
+40%, 60% {
+transform: translate3d(4px, 0, 0);
+}
 }
 
 .toggle-password {
@@ -386,8 +388,8 @@ body {
   cursor: pointer;
   &:focus {
     outline: none;
-  }
+}
   &__image {
     max-width: 24px;
-  }
+}
 }
