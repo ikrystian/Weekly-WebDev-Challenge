@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     setTimeout(function() {
         document.getElementById('loader').remove();
         body.classList.remove('loading');
-    }, 1);
+    }, 4000);
 }, false);
 
 var cityInput = document.getElementById('city-value');
