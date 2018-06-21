@@ -26,9 +26,10 @@
                         <span class="form__icon">
                             <img src="/assets/images/locked.svg" alt="">
                         </span>
-            <input class="form__input form__input--with-icon" id="password" value="sample-password" type="password" name="password" placeholder="Password">
-            <button type="button" class="toggle-password" title="show or hide password">
-              <img src="/assets/images/view.svg" id="toggle-password" class="toggle-password__image" alt="">
+            <input class="form__input form__input--with-icon" id="password" value="sample-password" [type]="type" name="password" placeholder="Password">
+            <button type="button" class="toggle-password" title="show or hide password" (click)="togglePassword(e)">
+              <img src="/assets/images/view.svg" *ngIf="!showPassword" class="toggle-password__image" alt="">
+              <img src="/assets/images/hide.svg" *ngIf="showPassword" class="toggle-password__image" alt="">
             </button>
           </div>
 
@@ -36,7 +37,7 @@
                         <span class="form__icon">
                             <img src="/assets/images/locked.svg" alt="">
                         </span>
-            <input class="form__input" type="password" name="password" placeholder="Confirm password">
+            <input class="form__input" type="password" name="confirmPassword" value="sample-password" [type]="type" placeholder="Confirm password">
           </div>
 
           <div class="form__group">
@@ -180,6 +181,28 @@
           <div class="form__footer form__footer--buttons">
             <button class="form__button">Send</button>
             <button class="form__button" disabled>Done</button>
+          </div>
+        </form>
+      </div>
+
+    </section>
+
+    <section class="form__area">
+
+      <h2 class="form__title">Subscribe form</h2>
+      <div class="form__wrapper">
+        <form action="" method="post" class="form" autocomplete="off">
+
+          <div class="form__group">
+                        <span class="form__icon">
+                            <img src="/assets/images/email.svg" alt="">
+                        </span>
+            <input class="form__input" type="text" name="email" placeholder="Enter Your Email">
+          </div>
+
+          <div class="form__footer form__footer--buttons">
+            <button class="form__button">Subscribe</button>
+            <button class="form__button form__button--denied">No, thanks</button>
           </div>
         </form>
       </div>
