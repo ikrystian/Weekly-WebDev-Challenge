@@ -52,8 +52,15 @@
                             <img src="/assets/images/location.svg" alt="">
                         </span>
             <input class="form__input form__input--select" id="city-value" type="text" name="location"
-                   placeholder="Your location">
-            <ul class="form__dropdown" id="cities"></ul>
+                   placeholder="Your location"
+                   [value]="currentCity"
+                   [class.open]='selectState'
+                   (focus)="focusInput($event)"
+                   (focusout)="selectState = false"
+                   [(ngModel)]="searchText">
+            <ul class="form__dropdown" id="cities">
+              <li class="form__dropdown-item" *ngFor="let city of cities | filter: searchText" (click)="selectCity(city)"> {{ city }}</li>
+            </ul>
           </div>
 
           <div class="form__group">
