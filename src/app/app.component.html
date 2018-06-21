@@ -70,7 +70,7 @@
 
           <div class="form__group" [formGroup]="registerForm" >
             <label class="form__label" for="terms">
-              <span class="form__label-text">I have read and accept the <a href="#">terms of use</a>.</span>
+              <span class="form__label-text">I have read and accept the <a href="#" (click)="openTermsDialog($event)">terms of use</a>.</span>
               <input class="form__checkbox" type="checkbox"
                      name="terms"
                      id="terms">

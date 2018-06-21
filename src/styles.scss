@@ -160,7 +160,8 @@ body {
     display: block;
 
     a {
-      color: #51850e;
+      font-weight: bold;
+      animation: rainbow 3s infinite;
     }
   }
 
@@ -413,7 +414,8 @@ body {
 }
 
 
-.dropdown-overlay {
+.dropdown-overlay,
+.cdk-global-overlay-wrapper {
   position: fixed;
   left: 0;
   top: 0;
@@ -421,4 +423,28 @@ body {
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.34);
   z-index: 20;
+}
+
+.cdk-global-overlay-wrapper {
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.terms-dialog {
+  width: 560px;
+  max-width: 90%;
+  z-index: 2000;
+  background-color: #fff;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+@keyframes rainbow{
+  5%{color: #a82530;}
+  35%{color: #f6a74e;}
+  65%{color: #382366;}
+  85%{color: #ef733e;}
+  0%{color: #8b6160;}
 }

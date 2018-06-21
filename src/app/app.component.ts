@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-
+import { MatDialog } from '@angular/material';
+import { TermsModalComponent } from './terms-modal/terms-modal.component';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -14,7 +15,8 @@ export class AppComponent {
   type = 'password';
   registerForm: FormGroup;
 
-  constructor(fb: FormBuilder) {
+  constructor(fb: FormBuilder, public dialog: MatDialog) {
+    this.dialog.open(TermsModalComponent, {panelClass: 'terms-dialog'});
     this.registerForm = fb.group({
       'username' : [null, Validators.required]
    });
@@ -25,6 +27,11 @@ export class AppComponent {
   togglePassword() {
     this.showPassword = !this.showPassword;
     this.type = this.showPassword ? 'text' : 'password';
+  }
+
+  openTermsDialog(e) {
+    e.preventDefault();
+    this.dialog.open(TermsModalComponent, {panelClass: 'terms-dialog'});
   }
 
   selectCity(city) {
@@ -41,3 +48,4 @@ export class AppComponent {
     alert('Sended !');
   }
 }
+
