@@ -16,7 +16,6 @@ export class AppComponent {
   registerForm: FormGroup;
 
   constructor(fb: FormBuilder, public dialog: MatDialog) {
-    this.dialog.open(TermsModalComponent, {panelClass: 'terms-dialog'});
     this.registerForm = fb.group({
       'username' : [null, Validators.required]
    });
