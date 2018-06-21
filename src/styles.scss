@@ -110,7 +110,9 @@ body {
   &__group {
     margin-bottom: 20px;
     position: relative;
-
+    &--above-ov {
+      z-index: 21;
+    }
     &:hover img {
       transform: scale(1);
     }
@@ -346,6 +348,10 @@ body {
     }
   }
 
+  &__above-ov {
+    z-index: 20;
+  }
+
   &__footer {
     display: flex;
     align-items: center;
@@ -404,4 +410,15 @@ body {
   &__image {
     max-width: 24px;
   }
+}
+
+
+.dropdown-overlay {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.34);
+  z-index: 20;
 }

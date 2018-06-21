@@ -13,13 +13,17 @@
       <div class="form__wrapper">
         <form action="" method="post" class="form" autocomplete="off">
 
-          <div class="form__group">
+          <div class="form__group" [formGroup]="registerForm">
                         <span class="form__icon">
                             <img src="/assets/images/businessman.svg" alt="">
                         </span>
-            <input class="form__input form__input--error" type="text" name="username" placeholder="Username" value="John"
+            <input class="form__input" type="text" name="username" placeholder="Username"
+                   [ngClass]="{'form__input--error':!registerForm.controls['username'].valid && registerForm.controls['username'].touched}"
+                   [formControl]="registerForm.controls['username']"
+                   #name
+                   autofocus
                    required>
-            <span class="form__error">This username is taken</span>
+            <span class="form__error" *ngIf="!registerForm.controls['username'].valid && registerForm.controls['username'].touched">Username is required :x</span>
           </div>
 
           <div class="form__group">
@@ -48,32 +52,34 @@
           </div>
 
 
-          <div class="form__group">
+          <div class="form__group form__group--above-ov">
                         <span class="form__icon">
                             <img src="/assets/images/location.svg" alt="">
                         </span>
-            <input class="form__input form__input--select" id="city-value" type="text" name="location"
+            <input class="form__input form__input--select " id="city-value" type="text" name="location"
                    placeholder="Your location"
                    [value]="currentCity"
                    [class.open]='selectState'
                    (focus)="focusInput($event)"
-                   (focusout)="selectState = false"
-                   [(ngModel)]="searchText">
-            <ul class="form__dropdown" id="cities">
+                   >
+            <ul class="form__dropdown form__above-ov" id="cities">
               <li class="form__dropdown-item" *ngFor="let city of cities | filter: searchText" (click)="selectCity(city)"> {{ city }}</li>
             </ul>
+
           </div>
 
-          <div class="form__group">
+          <div class="form__group" [formGroup]="registerForm" >
             <label class="form__label" for="terms">
               <span class="form__label-text">I have read and accept the <a href="#">terms of use</a>.</span>
-              <input class="form__checkbox" type="checkbox" id="terms">
+              <input class="form__checkbox" type="checkbox"
+                     name="terms"
+                     id="terms">
               <span class="form__checkmark"></span>
 
             </label>
           </div>
 
-          <button class="form__button" disabled>Sign up</button>
+          <button class="form__button" [disabled]="!registerForm.valid" type="submit">Sign up</button>
         </form>
       </div>
 
@@ -217,3 +223,4 @@
 
   </div>
 </div>
+<div class="dropdown-overlay" *ngIf="selectState" (click)="selectState = !selectState"></div>
