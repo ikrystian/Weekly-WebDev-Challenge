@@ -161,7 +161,6 @@ body {
 
     a {
       font-weight: bold;
-      animation: rainbow 3s infinite;
     }
   }
 
@@ -439,12 +438,4 @@ body {
   background-color: #fff;
   max-height: 80vh;
   overflow-y: auto;
-}
-
-@keyframes rainbow{
-  5%{color: #a82530;}
-  35%{color: #f6a74e;}
-  65%{color: #382366;}
-  85%{color: #ef733e;}
-  0%{color: #8b6160;}
 }
