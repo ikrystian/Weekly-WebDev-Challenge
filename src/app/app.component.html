@@ -60,6 +60,7 @@
                    placeholder="Your location"
                    [value]="currentCity"
                    [class.open]='selectState'
+                   [(ngModel)]="searchText"
                    (focus)="focusInput($event)"
                    >
             <ul class="form__dropdown form__above-ov" id="cities">
