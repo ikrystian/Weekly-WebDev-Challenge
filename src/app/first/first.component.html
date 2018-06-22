@@ -1,0 +1,243 @@
+<mat-toolbar>
+  <div class="back">
+    <button mat-icon-button color="primary" (click)="back()">
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+  </div>
+  <h1>Weekly WebDev Challenge #1</h1>
+</mat-toolbar>
+<div class="first-challenge">
+
+  <header class="header">
+    <a href="#" title="Go to home page" class="header__link">
+      <img src="/assets/images/first/logo.png" class="header__image" alt="header logo image">
+    </a>
+  </header>
+
+  <div class="container">
+    <div class="col">
+
+      <section class="form__area">
+
+        <h2 class="form__title">Register form</h2>
+        <div class="form__wrapper">
+          <form action="" method="post" class="form" autocomplete="off">
+
+            <div class="form__group" [formGroup]="registerForm">
+                        <span class="form__icon">
+                            <img src="/assets/images/first/businessman.svg" alt="">
+                        </span>
+              <input class="form__input" type="text" name="username" placeholder="Username"
+                     [ngClass]="{'form__input--error':!registerForm.controls['username'].valid && registerForm.controls['username'].touched}"
+                     [formControl]="registerForm.controls['username']"
+                     #name
+                     autofocus
+                     required>
+              <span class="form__error"
+                    *ngIf="!registerForm.controls['username'].valid && registerForm.controls['username'].touched">Username is required :x</span>
+            </div>
+
+            <div class="form__group">
+                        <span class="form__icon">
+                            <img src="/assets/images/first/locked.svg" alt="">
+                        </span>
+              <input class="form__input form__input--with-icon" id="password" value="sample-password" [type]="type"
+                     name="password" placeholder="Password">
+              <button type="button" class="toggle-password" title="show or hide password" (click)="togglePassword(e)">
+                <img src="/assets/images/first/view.svg" *ngIf="!showPassword" class="toggle-password__image" alt="">
+                <img src="/assets/images/first/hide.svg" *ngIf="showPassword" class="toggle-password__image" alt="">
+              </button>
+            </div>
+
+            <div class="form__group">
+                        <span class="form__icon">
+                            <img src="/assets/images/first/locked.svg" alt="">
+                        </span>
+              <input class="form__input" type="password" name="confirmPassword" value="sample-password" [type]="type"
+                     placeholder="Confirm password">
+            </div>
+
+            <div class="form__group">
+                        <span class="form__icon">
+                            <img src="/assets/images/first/email.svg" alt="">
+                        </span>
+              <input class="form__input" type="email" name="email" placeholder="Email">
+            </div>
+
+
+            <div class="form__group form__group--above-ov">
+                        <span class="form__icon">
+                            <img src="/assets/images/first/location.svg" alt="">
+                        </span>
+              <input class="form__input form__input--select " id="city-value" type="text" name="location"
+                     placeholder="Your location"
+                     [value]="currentCity"
+                     [class.open]='selectState'
+                     [(ngModel)]="searchText"
+                     (focus)="focusInput($event)"
+              >
+              <ul class="form__dropdown form__above-ov" id="cities">
+                <li class="form__dropdown-item" *ngFor="let city of cities | filter: searchText"
+                    (click)="selectCity(city)"> {{ city }}
+                </li>
+              </ul>
+
+            </div>
+
+            <div class="form__group" [formGroup]="registerForm">
+              <label class="form__label" for="terms">
+                <span class="form__label-text">I have read and accept the <a href="#">terms of use</a>.</span>
+                <input class="form__checkbox" type="checkbox"
+                       name="terms"
+                       id="terms">
+                <span class="form__checkmark"></span>
+
+              </label>
+            </div>
+
+            <button class="form__button" [disabled]="!registerForm.valid" type="submit">Sign up</button>
+          </form>
+        </div>
+
+      </section>
+
+      <section class="form__area">
+
+        <h2 class="form__title">Send email</h2>
+        <div class="form__wrapper">
+          <form action="" method="post" class="form" autocomplete="off">
+
+            <div class="form__group">
+                        <span class="form__icon">
+                            <img src="/assets/images/first/businessman.svg" alt="">
+                        </span>
+              <input class="form__input" type="text" name="username" placeholder="Username">
+            </div>
+
+            <div class="form__group">
+                        <span class="form__icon">
+                            <img src="/assets/images/first/email.svg" alt="">
+                        </span>
+              <input class="form__input" type="text" name="email" placeholder="Your email">
+            </div>
+
+            <div class="form__group">
+              <textarea class="form__textarea" placeholder="Type your message here"></textarea>
+            </div>
+
+            <div class="form__group">
+              <label class="form__label" for="copy-mail">
+                <span class="form__label-text">Send a copy to my Email</span>
+                <input class="form__checkbox" type="checkbox" id="copy-mail">
+                <span class="form__checkmark"></span>
+
+              </label>
+            </div>
+
+            <button class="form__button">Send email</button>
+          </form>
+        </div>
+
+      </section>
+
+
+    </div>
+    <div class="col">
+      <section class="form__area">
+
+        <h2 class="form__title">Sign in form</h2>
+        <div class="form__wrapper">
+          <form action="" method="post" class="form" autocomplete="off">
+
+            <div class="form__group">
+                        <span class="form__icon">
+                            <img src="/assets/images/first/businessman.svg" alt="">
+                        </span>
+              <input class="form__input" type="text" name="username" placeholder="Username">
+            </div>
+
+            <div class="form__group">
+                        <span class="form__icon">
+                            <img src="/assets/images/first/locked.svg" alt="">
+                        </span>
+              <input class="form__input" type="password" name="password" placeholder="Password">
+            </div>
+
+            <div class="form__footer">
+
+              <div class="form__group">
+                <label class="form__label" for="remember-me">
+                  <span class="form__label-text">Remember me.</span>
+                  <input class="form__checkbox" type="checkbox" id="remember-me">
+                  <span class="form__checkmark"></span>
+                </label>
+              </div>
+
+              <button class="form__button">Sign in</button>
+            </div>
+          </form>
+        </div>
+
+      </section>
+
+      <section class="form__area">
+
+        <h2 class="form__title">Sign in form</h2>
+        <div class="form__wrapper">
+          <form action="" method="post" class="form" autocomplete="off">
+
+            <div class="form__group">
+                        <span class="form__icon">
+                            <img src="/assets/images/first/email.svg" alt="">
+                        </span>
+              <input class="form__input" type="text" name="email" placeholder="Enter Your Email">
+            </div>
+
+            <div class="form__group">
+                        <span class="form__icon">
+                            <img src="/assets/images/first/phone.svg" alt="">
+                        </span>
+              <input class="form__input" type="text" name="password" placeholder="Enter your Phone number">
+            </div>
+
+            <div class="form__footer form__footer--buttons">
+              <button class="form__button">Send</button>
+              <button class="form__button" disabled>Done</button>
+            </div>
+          </form>
+        </div>
+
+      </section>
+
+      <section class="form__area">
+
+        <h2 class="form__title">Subscribe form</h2>
+        <div class="form__wrapper">
+          <form action="" method="post" class="form" autocomplete="off">
+
+            <div class="form__group">
+                        <span class="form__icon">
+                            <img src="/assets/images/first/email.svg" alt="">
+                        </span>
+              <input class="form__input" type="text" name="email" placeholder="Enter Your Email">
+            </div>
+
+            <div class="form__footer form__footer--buttons">
+              <button class="form__button">Subscribe</button>
+              <button class="form__button form__button--denied">No, thanks</button>
+            </div>
+          </form>
+        </div>
+
+      </section>
+
+      <footer class="footer">
+        <a href="#" title="Go to home page" class="footer__link">
+          <img src="/assets/images/first/logo.png" class="footer__image" alt="footer logo image">
+        </a>
+      </footer>
+
+    </div>
+  </div>
+  <div class="dropdown-overlay" *ngIf="selectState" (click)="selectState = !selectState"></div>
+</div>
