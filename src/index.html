@@ -29,9 +29,9 @@
       z-index: 10;
     }
 
-    .loader-screen__image {
+    .loader-screen__loading {
       animation: pulse alternate 0.5s infinite ease-in;
-      opacity: 0.5;
+      color: #fff;
     }
 
     @keyframes pulse {
@@ -46,9 +46,9 @@
 </head>
 <body>
 <app-root>
-  <!--<div class="loader-screen" id="loader">-->
-    <!--<img src="/assets/images/logo-loading.webp" class="loader-screen__image" alt="loading logo">-->
-  <!--</div>-->
+  <div class="loader-screen">
+    <h1 class="loader-screen__loading">Loading ...</h1>
+  </div>
 </app-root>
 </body>
 </html>
