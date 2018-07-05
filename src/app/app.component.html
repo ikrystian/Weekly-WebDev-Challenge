@@ -1,1 +1,9 @@
 <router-outlet></router-outlet>
+
+<div class="theming">
+
+    <ng-container *ngFor="let theme of themes">
+        <button [class]="theme.file" (click)="changeTheme(theme.file)">{{ theme.name }}</button>
+    </ng-container>
+
+</div>

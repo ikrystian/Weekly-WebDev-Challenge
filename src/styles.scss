@@ -1,29 +1,48 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+$colors: (
+        background-color: #e5e5e5,
+        bar-color: #0099ff,
+);
+
+@mixin var($property, $varName, $important:"") {
+  #{$property}: map-get($colors, $varName)#{ $important};
+  #{$property}: var(--#{$varName}, map-get($colors, $varName)) #{ $important};
 }
 
-mat-toolbar.mat-toolbar {
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-  position: fixed;
-  background-color: #fff;
-  z-index: 200000;
-  padding-left: 0;
-  .back {
-    height: 100%;
-    width: 64px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: 12px;
-    border-right: 1px solid rgba(0 ,0 ,0 , 0.12);
+body {
+  @include var(background-color, background-color);
+
+  mat-toolbar.mat-toolbar {
+    @include var(background-color, bar-color)
   }
-  h1 {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  mat-toolbar.mat-toolbar {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    position: fixed;
+    background-color: #fff;
+    z-index: 200000;
+    padding-left: 0;
+    .back {
+      height: 100%;
+      width: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 12px;
+      border-right: 1px solid rgba(0, 0, 0, 0.12);
+    }
+
+    h1 {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
   }
 }

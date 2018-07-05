@@ -1,6 +1,6 @@
 ul {
   display: flex;
-  height: 100vh;
+  height: 50vh;
   padding: 20px;
   list-style: none;
   text-transform: uppercase;
@@ -20,5 +20,14 @@ ul {
     &:hover {
       border-color: red;
     }
+  }
+}
+
+footer {
+  display: flex;
+
+
+  button  {
+    margin: 10px;
   }
 }
