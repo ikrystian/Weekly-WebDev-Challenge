@@ -12,6 +12,7 @@ $colors: (
 
 body {
   @include var(background-color, background-color);
+  margin: 0;
 
   mat-toolbar.mat-toolbar {
     @include var(background-color, bar-color)
